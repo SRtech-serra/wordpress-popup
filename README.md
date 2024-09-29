@@ -29,11 +29,11 @@ Eklentinin kullanımını daha iyi anlamak için aşağıdaki ekran görüntüle
 
 ### Eklenti Ayarları Sayfası
 
-![Eklenti Ayarları Sayfası](https://via.placeholder.com/600x400)
+![Eklenti Ayarları Sayfası](https://github.com/kullaniciadi/serra-popup/images/settings_page.png)
 
 ### Örnek Pop-up Görünümü
 
-![Örnek Pop-up Görünümü](https://via.placeholder.com/600x400)
+![Örnek Pop-up Görünümü](https://github.com/kullaniciadi/serra-popup/images/usage.png)
 
 ## Yapılandırma
 
