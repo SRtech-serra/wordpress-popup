@@ -23,8 +23,7 @@
 }
 
 .serra-popup-logo {
-    height: 250px;
-    width: auto;
+
 }
 
 .serra-popup-content h1 {
@@ -48,4 +47,6 @@
     border: none;
     padding: 5px 10px;
     cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.5rem
 }

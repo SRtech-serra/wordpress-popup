@@ -3,7 +3,7 @@
  * Plugin Name: Serra Popup
  * Plugin URI:  http://serra.org.tr
  * Description: Önemli bilgileri göstermek için özelleştirilebilir popup.
- * Version:     1.0.0
+ * Version:     1.0.1
  * Author: SRtech Serra 🖤
  * Author URI:  http://serra.org.tr
  */
@@ -121,7 +121,7 @@ function serra_popup_html() {
 			<?php endif; ?>
             <h1><?php echo esc_html($options['header_text']); ?></h1>
             <p><?php echo esc_html($options['description']); ?></p>
-            <button id="serraPopupClose">Kapat</button>
+            <button id="serraPopupClose">×</button>
         </div>
     </div>
 	<?php
