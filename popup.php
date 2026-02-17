@@ -3,7 +3,7 @@
  * Plugin Name: Serra Popup
  * Plugin URI:  http://serra.org.tr
  * Description: Önemli bilgileri göstermek için özelleştirilebilir popup.
- * Version:     1.0.1
+ * Version:     1.1.0
  * Author: SRtech Serra 🖤
  * Author URI:  http://serra.org.tr
  */
@@ -17,7 +17,9 @@ function serra_popup_default_options() {
 		'logo' => plugins_url('default-logo.png', __FILE__),
 		'background_image' => plugins_url('default-background.jpg', __FILE__),
 		'header_text' => 'Sitemize Hoş Geldiniz!',
-		'description' => 'Bu, önemli bilgileri göstermek için özelleştirilebilir bir pop-up\'tır.'
+		'description' => 'Bu, önemli bilgileri göstermek için özelleştirilebilir bir pop-up\'tır.',
+		'button_text' => 'Hemen İncele',
+		'button_url' => '#'
 	);
 	add_option('serra_popup_options', $default_options);
 }
@@ -25,7 +27,7 @@ function serra_popup_default_options() {
 // CSS ve JavaScript dosyalarını yükle
 function serra_popup_enqueue_scripts() {
 	wp_enqueue_style('serra-popup-css', plugins_url('serra-popup.css', __FILE__));
-	wp_enqueue_script('serra-popup-js', plugins_url('serra-popup.js', __FILE__), array('jquery'), '1.0.0', true);
+	wp_enqueue_script('serra-popup-js', plugins_url('serra-popup.js', __FILE__), array('jquery'), '1.1.0', true);
 	wp_enqueue_media();
 }
 add_action('wp_enqueue_scripts', 'serra_popup_enqueue_scripts');
@@ -75,6 +77,8 @@ function serra_popup_settings_init() {
 	add_settings_field('serra_popup_background_image', 'Popup Arka Plan Resmi', 'serra_popup_settings_background_image_cb', 'serra_popup', 'serra_popup_settings_section');
 	add_settings_field('serra_popup_header_text', 'Popup Başlık Metni', 'serra_popup_settings_header_text_cb', 'serra_popup', 'serra_popup_settings_section');
 	add_settings_field('serra_popup_description', 'Popup Açıklama Metni', 'serra_popup_settings_description_cb', 'serra_popup', 'serra_popup_settings_section');
+	add_settings_field('serra_popup_button_text', 'Buton Metni', 'serra_popup_settings_button_text_cb', 'serra_popup', 'serra_popup_settings_section');
+	add_settings_field('serra_popup_button_url', 'Buton Linki', 'serra_popup_settings_button_url_cb', 'serra_popup', 'serra_popup_settings_section');
 }
 add_action('admin_init', 'serra_popup_settings_init');
 
@@ -88,6 +92,8 @@ function serra_popup_options_validate($input) {
 	$input['background_image'] = esc_url_raw($input['background_image']);
 	$input['header_text'] = sanitize_text_field($input['header_text']);
 	$input['description'] = sanitize_textarea_field($input['description']);
+	$input['button_text'] = sanitize_text_field($input['button_text']);
+	$input['button_url'] = esc_url_raw($input['button_url']);
 	return $input;
 }
 
@@ -102,7 +108,9 @@ function serra_popup_html() {
 			'logo' => plugins_url('default-logo.png', __FILE__),
 			'background_image' => plugins_url('default-background.jpg', __FILE__),
 			'header_text' => 'Sitemize Hoş Geldiniz!',
-			'description' => 'Bu, önemli bilgileri göstermek için özelleştirilebilir bir pop-up\'tır.'
+			'description' => 'Bu, önemli bilgileri göstermek için özelleştirilebilir bir pop-up\'tır.',
+			'button_text' => 'Hemen İncele',
+			'button_url' => '#'
 		);
 	}
 
@@ -121,6 +129,14 @@ function serra_popup_html() {
 			<?php endif; ?>
             <h1><?php echo esc_html($options['header_text']); ?></h1>
             <p><?php echo esc_html($options['description']); ?></p>
+			<?php if (!empty($options['button_text']) && !empty($options['button_url'])): ?>
+                <a href="<?php echo esc_url($options['button_url']); ?>" class="serra-popup-btn">
+					<?php echo esc_html($options['button_text']); ?>
+                </a>
+			<?php endif; ?>
+            <div class="serra-popup-actions">
+                <button id="serraPopupRemindLater" class="serra-popup-link">Daha sonra hatırlat</button>
+            </div>
             <button id="serraPopupClose">×</button>
         </div>
     </div>
@@ -159,6 +175,18 @@ function serra_popup_settings_description_cb() {
 	$options = get_option('serra_popup_options');
 	$description_value = isset($options['description']) ? $options['description'] : '';
 	echo '<textarea id="serra_popup_description" name="serra_popup_options[description]">' . esc_textarea($description_value) . '</textarea>';
+}
+
+function serra_popup_settings_button_text_cb() {
+	$options = get_option('serra_popup_options');
+	$button_text_value = isset($options['button_text']) ? $options['button_text'] : '';
+	echo '<input type="text" id="serra_popup_button_text" name="serra_popup_options[button_text]" value="' . esc_attr($button_text_value) . '" />';
+}
+
+function serra_popup_settings_button_url_cb() {
+	$options = get_option('serra_popup_options');
+	$button_url_value = isset($options['button_url']) ? $options['button_url'] : '';
+	echo '<input type="text" id="serra_popup_button_url" name="serra_popup_options[button_url]" value="' . esc_attr($button_url_value) . '" />';
 }
 
 // Medya yükleme işlevi için JavaScript
