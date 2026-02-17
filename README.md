@@ -6,7 +6,7 @@ Bu WordPress eklentisi, özelleştirilebilir pop-up'lar oluşturmanızı sağlar
 
 - **Özelleştirilebilir Başlık ve Açıklama:** Pop-up'ınızın başlık ve açıklama metnini kolayca düzenleyebilirsiniz.
 - **Logo ve Arka Plan Resmi Desteği:** Pop-up'ınıza bir logo ve arka plan resmi ekleyebilirsiniz.
-- **Harekete Geçirici Mesaj (CTA) Butonu:** Özelleştirilebilir buton metni ve bağlantısı ile kullanıcıları istediğiniz sayfaya yönlendirebilirsiniz.
+- **Çift Harekete Geçirici Mesaj (CTA) Butonu:** İki ayrı buton ekleyerek kullanıcıları farklı sayfalara yönlendirebilirsiniz (Örn: "İncele" ve "Satın Al").
 - **Gelişmiş Gösterim Kontrolü:** 
   - **3 Günlük Kapatma Hafızası:** Kapat butonuna basıldığında pop-up 3 gün boyunca tekrar gösterilmez.
   - **Daha Sonra Hatırlat:** Kullanıcı bu seçeneği seçtiğinde pop-up 3 sayfa gezinmesinden sonra tekrar çıkar.
@@ -64,7 +64,7 @@ Bu proje [MIT Lisansı](LICENSE) altında lisanslanmıştır.
 ## Değişim Günlüğü (Changelog)
 
 ### v1.1.0 (17 Şubat 2026)
-- **Yeni:** Aksiyon Butonu (CTA) özelliği eklendi. Buton metni ve linki panelden ayarlanabiliyor.
+- **Yeni:** Çift Aksiyon Butonu (CTA) özelliği eklendi. İkinci buton panelden aktif edilebilir.
 - **Yeni:** "Daha sonra hatırlat" özelliği eklendi (3 sayfa sonra tekrar gösterim).
 - **Yeni:** Kapat butonuna basıldığında 3 gün boyunca tekrar göstermeme özelliği eklendi.
 - **Geliştirme:** UI/UX tasarımı tamamen modernize edildi.
