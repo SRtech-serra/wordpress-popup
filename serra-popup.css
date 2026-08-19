@@ -263,3 +263,254 @@
         max-width: 80px;
     }
 }
+
+/* Announcement Badge (Rozet) */
+.serra-popup-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #ef4444 0%, #f97316 100%);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 6px 16px;
+    border-radius: 50px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+    animation: serra_pulse 2s infinite;
+}
+
+@keyframes serra_pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Countdown Timer Widget */
+.serra-popup-countdown {
+    margin: 20px 0;
+    padding: 16px;
+    background: rgba(241, 245, 249, 0.6);
+    border-radius: 16px;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.serra-countdown-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #64748b;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.serra-countdown-timer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.serra-timer-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 44px;
+}
+
+.serra-timer-val {
+    font-size: 22px;
+    font-weight: 800;
+    color: #0f172a;
+    background: #ffffff;
+    padding: 6px 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    min-width: 40px;
+    text-align: center;
+}
+
+.serra-timer-unit-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: #94a3b8;
+    margin-top: 4px;
+}
+
+.serra-timer-colon {
+    font-size: 20px;
+    font-weight: 800;
+    color: #64748b;
+    line-height: 1;
+    margin-bottom: 14px;
+}
+
+/* Theme Presets */
+
+/* Neon Purple Theme */
+.serra-popup-content.theme-neon {
+    background: linear-gradient(145deg, #1e1b4b 0%, #311042 100%);
+    box-shadow: 0 25px 50px -12px rgba(168, 85, 247, 0.4);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.serra-popup-content.theme-neon::before {
+    background: linear-gradient(to bottom, rgba(30, 27, 75, 0.85) 0%, rgba(49, 16, 66, 0.95) 100%);
+}
+
+.serra-popup-content.theme-neon h1 {
+    color: #ffffff;
+}
+
+.serra-popup-content.theme-neon p {
+    color: #e9d5ff;
+}
+
+.serra-popup-content.theme-neon .serra-popup-btn.primary {
+    background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+    box-shadow: 0 10px 20px -3px rgba(168, 85, 247, 0.5);
+}
+
+.serra-popup-content.theme-neon .serra-popup-btn.secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.serra-popup-content.theme-neon .serra-popup-countdown {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.serra-popup-content.theme-neon .serra-countdown-label,
+.serra-popup-content.theme-neon .serra-timer-unit-label,
+.serra-popup-content.theme-neon .serra-timer-colon {
+    color: #cbd5e1;
+}
+
+.serra-popup-content.theme-neon .serra-timer-val {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+/* Emerald Luxury Theme */
+.serra-popup-content.theme-emerald {
+    background: linear-gradient(145deg, #064e3b 0%, #022c22 100%);
+    box-shadow: 0 25px 50px -12px rgba(6, 78, 59, 0.5);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.serra-popup-content.theme-emerald::before {
+    background: linear-gradient(to bottom, rgba(6, 78, 59, 0.85) 0%, rgba(2, 44, 34, 0.95) 100%);
+}
+
+.serra-popup-content.theme-emerald h1 {
+    color: #ffffff;
+}
+
+.serra-popup-content.theme-emerald p {
+    color: #a7f3d0;
+}
+
+.serra-popup-content.theme-emerald .serra-popup-btn.primary {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: #ffffff !important;
+    box-shadow: 0 10px 20px -3px rgba(245, 158, 11, 0.4);
+}
+
+.serra-popup-content.theme-emerald .serra-popup-btn.secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Clean Light Theme */
+.serra-popup-content.theme-clean {
+    background-color: #ffffff;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+    border: 1px solid #e2e8f0;
+}
+
+.serra-popup-content.theme-clean::before {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.serra-popup-content.theme-clean .serra-popup-btn.primary {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+}
+
+/* Entrance Animations */
+
+/* Pop / Scale (Default) */
+.serra-popup-content.anim-pop {
+    transform: translate(-50%, -50%) scale(0.85);
+    opacity: 0;
+    animation: serra_pop_in 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Slide Up */
+.serra-popup-content.anim-slide_up {
+    transform: translate(-50%, -30%);
+    opacity: 0;
+    animation: serra_slide_up 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes serra_slide_up {
+    to {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+}
+
+/* Fade In */
+.serra-popup-content.anim-fade {
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    animation: serra_fade_in 0.4s ease forwards;
+}
+
+@keyframes serra_fade_in {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Bounce */
+.serra-popup-content.anim-bounce {
+    transform: translate(-50%, -50%) scale(0.7);
+    opacity: 0;
+    animation: serra_bounce 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+@keyframes serra_bounce {
+    to {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Mobile Bottom Sheet Style */
+@media (max-width: 640px) {
+    .serra-popup-container.mobile-bottom-sheet .serra-popup-content {
+        top: auto !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        transform: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        border-radius: 28px 28px 0 0 !important;
+        padding: 40px 24px 30px 24px !important;
+        animation: serra_bottom_sheet_in 0.4s ease forwards !important;
+    }
+
+    @keyframes serra_bottom_sheet_in {
+        from {
+            transform: translateY(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+}
